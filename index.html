@@ -1,0 +1,562 @@
+<!-- File: koyantaw.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Koyantaw-ကိုယ်ရံတော်</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: #f9f9f9;
+        color: #222;
+        line-height: 1.6;
+      }
+
+      header {
+        padding: 2rem;
+        text-align: center;
+        background: #fff;
+        border-bottom: 1px solid #eee;
+      }
+
+      header h1 {
+        font-size: 2rem;
+        margin: 0.5rem 0;
+      }
+
+      header p {
+        font-size: 1.1rem;
+        color: #555;
+      }
+
+      .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 3rem 1rem;
+      }
+
+      .hero h2 {
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+        color: #666;
+        max-width: 500px;
+      }
+
+      .cta-button {
+        background-color: #f4c430;
+        color: #000;
+        padding: 0.8rem 1.5rem;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        margin-top: 1.5rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .cta-button:hover {
+        background-color: #e6b100;
+      }
+
+      .section {
+        padding: 3rem 1rem;
+        text-align: center;
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .feature-box {
+        background: white;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+      }
+
+      .feature-box h3 {
+        margin: 1rem 0 0.5rem;
+        font-size: 1.2rem;
+      }
+
+      .feature-box p {
+        font-size: 0.95rem;
+        color: #555;
+      }
+
+      .journey-section {
+        background: #fff;
+        padding: 4rem 1rem;
+        text-align: center;
+      }
+
+      .journey-steps {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem 0;
+      }
+
+      .journey-step {
+        display: flex;
+        align-items: center;
+        margin-bottom: 3rem;
+        text-align: left;
+        background: #f8f8f8;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      .step-number {
+        width: 50px;
+        height: 50px;
+        background: #f4c430;
+        color: #000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-right: 1.5rem;
+        flex-shrink: 0;
+      }
+
+      .step-content {
+        flex-grow: 1;
+      }
+
+      .step-content h3 {
+        margin: 0 0 0.5rem 0;
+        color: #222;
+      }
+
+      .step-content p {
+        margin: 0;
+        color: #555;
+        line-height: 1.6;
+      }
+
+      .mockup-images {
+        display: flex;
+        flex-direction: column;
+        gap: 6rem;
+        margin: 4rem auto;
+        padding: 0 2rem;
+        max-width: 1200px;
+      }
+
+      .mockup-card {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        padding: 2rem;
+        position: relative;
+        overflow: visible;
+      }
+
+      .mockup-card::before {
+        content: "";
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-image: url("images/koyantaw.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 0;
+        right: 0%;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0.6;
+      }
+
+      .mockup-card.reverse::before {
+        right: auto;
+        left: 0%;
+      }
+
+      .mockup-content {
+        flex: 1;
+        max-width: 400px;
+        z-index: 2;
+      }
+
+      .mockup-card img {
+        width: 280px;
+        border-radius: 24px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        transition: transform 0.3s ease;
+        position: relative;
+        z-index: 2;
+      }
+
+      .mockup-card.reverse {
+        flex-direction: row-reverse;
+      }
+
+      .mockup-card:hover {
+        transform: none;
+      }
+
+      .mockup-card.reverse:hover {
+        transform: none;
+      }
+
+      .mockup-content h3 {
+        margin: 0 0 1rem 0;
+        color: #222;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      .mockup-content p {
+        margin: 0;
+        color: #666;
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+
+      .mockup-card:hover img {
+        transform: translateY(-5px);
+      }
+
+      .mockup-card.reverse:hover img {
+        transform: translateY(-5px);
+      }
+
+      .impact {
+        background: #fff;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+      }
+
+      .contributors {
+        background: #fff;
+        padding-top: 4rem;
+      }
+
+      .contributors-grid-modern {
+        display: grid;
+        gap: 2rem;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        margin-top: 2rem;
+        padding: 0 1rem;
+      }
+
+      .contributor-card {
+        background: white;
+        border-radius: 16px;
+        text-align: center;
+        padding: 1.5rem;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .contributor-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      }
+
+      .contributor-card img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1rem;
+      }
+
+      .contributor-card h4 {
+        font-size: 1rem;
+        margin: 0.2rem 0;
+      }
+
+      .contributor-card p {
+        font-size: 0.85rem;
+        color: #666;
+      }
+
+      footer {
+        padding: 2rem;
+        text-align: center;
+        background: #f0f0f0;
+        font-size: 0.95rem;
+        color: #444;
+      }
+
+      footer p {
+        margin: 0 0 1rem 0;
+      }
+
+      .supporters {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid #ddd;
+        font-size: 0.9rem;
+      }
+
+      .supporters a {
+        color: #28531a;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        margin: 0 0.5rem;
+      }
+
+      .supporters a:hover {
+        color: #e6b100;
+        text-decoration: underline;
+      }
+
+      @media (max-width: 600px) {
+        .hero h2 {
+          font-size: 1.6rem;
+        }
+
+        .mockup-images img {
+          width: 160px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .mockup-images {
+          gap: 4rem;
+          margin: 2rem auto;
+        }
+
+        .mockup-card {
+          flex-direction: column-reverse;
+          text-align: center;
+          gap: 2rem;
+          padding: 1rem;
+        }
+
+        .mockup-card.reverse {
+          flex-direction: column-reverse;
+        }
+
+        .mockup-card img {
+          width: 240px;
+        }
+
+        .mockup-card:hover img {
+          transform: translateY(-3px);
+        }
+
+        .mockup-card.reverse:hover img {
+          transform: translateY(-3px);
+        }
+
+        .mockup-content {
+          max-width: 100%;
+        }
+
+        .mockup-content h3 {
+          font-size: 1.5rem;
+        }
+
+        .mockup-card::before {
+          width: 250px;
+          height: 250px;
+          right: 50%;
+          transform: translate(50%, -50%);
+          opacity: 0.4;
+        }
+
+        .mockup-card.reverse::before {
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Koyantaw - ကိုယ်ရံတော်</h1>
+      <p>Your virtual bodyguard for daily commuting safety</p>
+    </header>
+
+    <section class="hero">
+      <h2>Stay Safe, Wherever You Go</h2>
+      <p>
+        Auto-alerts, panic mode, and real-time sharing designed to protect you
+        during your daily journey.
+      </p>
+      <button class="cta-button">Get the App</button>
+    </section>
+
+    <section class="section">
+      <h2>App Screens</h2>
+      <div class="mockup-images">
+        <div class="mockup-card">
+          <div class="mockup-content">
+            <h3>Home Screen</h3>
+            <p>Quick access to all features with one tap.</p>
+          </div>
+          <img src="images/home.png" alt="Koyantaw Home Screen" />
+        </div>
+        <div class="mockup-card reverse">
+          <div class="mockup-content">
+            <h3>Journey Check-in</h3>
+            <p>
+              Start your journey with confidence. Set your destination and
+              activate safety monitoring with our intuitive check-in system.
+            </p>
+          </div>
+          <img src="images/check_in.png" alt="Koyantaw Check-in Screen" />
+        </div>
+        <div class="mockup-card">
+          <div class="mockup-content">
+            <h3>Real-time Sharing</h3>
+            <p>
+              Keep your loved ones informed. Share your live location and
+              journey status with your trusted safety network.
+            </p>
+          </div>
+          <img src="images/sharing.png" alt="Koyantaw Sharing Screen" />
+        </div>
+      </div>
+    </section>
+
+    <section class="journey-section">
+      <h2>How Koyantaw Works</h2>
+      <div class="journey-steps">
+        <div class="journey-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Setup Your Safety Network</h3>
+            <p>
+              Add trusted contacts who will receive alerts when you need help.
+              These can be family members, friends, or emergency contacts.
+            </p>
+          </div>
+        </div>
+
+        <div class="journey-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Start Your Journey</h3>
+            <p>
+              When you begin your commute, activate the app. Koyantaw will
+              automatically monitor your movement and surroundings.
+            </p>
+          </div>
+        </div>
+
+        <div class="journey-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Smart Monitoring</h3>
+            <p>
+              The app continuously analyzes your speed, movement patterns. If
+              anything unusual is detected, it will trigger an alert.
+            </p>
+          </div>
+        </div>
+
+        <div class="journey-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Panic Mode</h3>
+            <p>
+              If you feel unsafe, simply tap the panic button. This immediately
+              sends your location and activates emergency protocols to your
+              safety network.
+            </p>
+          </div>
+        </div>
+
+        <div class="journey-step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>WatchMeOver</h3>
+            <p>
+              Share your live location with trusted contacts who can monitor
+              your journey in real-time and respond quickly if needed.
+            </p>
+          </div>
+        </div>
+
+        <div class="journey-step">
+          <div class="step-number">6</div>
+          <div class="step-content">
+            <h3>Safe Arrival</h3>
+            <p>
+              Once you reach your destination, the app automatically notifies
+              your safety network that you've arrived safely.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section impact">
+      <h2>Why It Matters</h2>
+      <p>
+        With rising crime rates in Myanmar, automated safety tools can save
+        lives. Let's make protection proactive.
+      </p>
+    </section>
+
+    <section class="section contributors">
+      <h2>Contributors</h2>
+      <div class="contributors-grid-modern">
+ <div class="contributor-card">
+          <img
+            src="https://media.licdn.com/dms/image/v2/D5603AQGnoniThGj8mA/profile-displayphoto-shrink_400_400/B56ZRgficbHoAg-/0/1736785668290?e=1750291200&v=beta&t=G92_UVylbEBfv_caHFXHYHinmbg-rrGCgjf8cNIqHkE"
+            alt="Bo Bo Linnaing"
+          />
+          <a href="https://www.linkedin.com/in/bobo-linnaing-77538b184">  <h4>Bobo Linnaing</h4></a>
+          <p>UI/UX Designer | MBBS</p>
+        </div>
+
+          <div class="contributor-card">
+            <img
+            src="https://media.licdn.com/dms/image/v2/D5603AQGYubjYSWtuKQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1722680905076?e=1750291200&v=beta&t=vDTQ_OMdRMdmRpMpu1gOjShCpgG3OmbNOB_zVuefwW8"
+            alt="Pwint Yee Mon (Christine)"
+          />
+          <a href="https://www.linkedin.com/in/christine-mon"> <h4>Pwint Yee Mon (Christine)</h4></a>
+          <p>
+            Product Designer specialising in complex, large-scale systems and
+            applications | Visual and Interaction Design Specialist | Design
+            System Enthusiast
+          </p>
+        </div>
+        
+        
+        <div class="contributor-card">
+          <img
+            src="https://media.licdn.com/dms/image/v2/D5603AQGxT5syXMJJCQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1704724524527?e=1750291200&v=beta&t=AHBsUxlkoAuwrz-pgh0KWJ-KyFdE7h7OHVFzMyANP7w"
+            alt="Khant Win"
+          />
+          <a href="https://www.linkedin.com/in/khantwin/"> <h4>Khant Win</h4></a>
+          <p>
+            Application Consultant | Flutter Developer | Hustler
+            entrepreneurship
+          </p>
+        </div>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <p>Let's be there for our loved ones when they really need us.</p>
+      <div class="supporters">
+        Supported by <a href="https://www.bimgoc.com/">BIM Goc</a>
+      </div>
+      </div>
+    </footer>
+  </body>
+</html>
