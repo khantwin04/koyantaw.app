@@ -1,254 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Koyantaw Privacy Policy</title>
-    <style>
-      :root {
-        --bg: #f9f9f9;
-        --surface: #ffffff;
-        --text: #222;
-        --muted: #555;
-        --accent: #f4c430;
-        --accent-dark: #c89600;
-        --border: #ececec;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy · Koyantaw</title>
+  <meta name="description" content="How Koyantaw collects, uses and protects your information, and the choices you have." />
+  <meta name="theme-color" content="#FFC700" />
+  <link rel="icon" type="image/svg+xml" href="/images/brand/logo.svg" />
+  <link rel="icon" type="image/png" sizes="64x64" href="/images/brand/favicon-64.png" />
+  <link rel="apple-touch-icon" href="/images/brand/apple-touch-icon.png" />
+  <link rel="preload" href="/fonts/Satoshi-Bold.otf" as="font" type="font/otf" crossorigin />
+  <link rel="canonical" href="https://koyantaw.app/privacy-policy/" />
+  <link rel="stylesheet" href="/styles.css?v=2" />
+</head>
+<body>
 
-      * {
-        box-sizing: border-box;
-      }
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+</svg>
 
-      body {
-        margin: 0;
-        font-family: "Segoe UI", sans-serif;
-        color: var(--text);
-        background: var(--bg);
-        line-height: 1.65;
-      }
+<!-- ===== Nav ===== -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Koyantaw home">
+      <img src="/images/brand/logo.svg" alt="" width="40" height="40" />
+      Koyantaw
+    </a>
+    <nav class="nav-links" aria-label="Site">
+      <a href="/#features">Features</a>
+      <a href="/#how">How it works</a>
+      <a href="/#privacy">Privacy</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-dark" href="/#download">Get the app</a>
+  </div>
+</header>
 
-      .container {
-        max-width: 920px;
-        margin: 0 auto;
-        padding: 2rem 1rem 4rem;
-      }
+<main>
+  <!-- ===== Header ===== -->
+  <section class="legal-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="/">Home</a> &nbsp;/&nbsp; Privacy Policy</div>
+      <h1>Privacy Policy</h1>
+      <span class="date-pill"><svg class="i"><use href="#i-calendar"/></svg>Effective date: October 10, 2026</span>
+      <p class="lede">
+        Koyantaw ("we", "our", "us") is a personal safety app that helps
+        users share live trip updates, send panic alerts, and keep trusted
+        contacts informed. This Privacy Policy explains what information we
+        collect, how we use it, and what choices you have.
+      </p>
 
-      .card {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
-        padding: 1.5rem;
-      }
-
-      h1 {
-        margin: 0 0 0.5rem;
-        font-size: 2rem;
-      }
-
-      h2 {
-        margin-top: 1.8rem;
-        margin-bottom: 0.6rem;
-        font-size: 1.25rem;
-      }
-
-      p,
-      li {
-        color: var(--muted);
-      }
-
-      ul {
-        margin: 0.4rem 0 0.8rem 1.2rem;
-        padding: 0;
-      }
-
-      .meta {
-        margin-bottom: 1rem;
-        font-size: 0.95rem;
-        color: #666;
-      }
-
-      .top-links,
-      .bottom-links {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-        margin-top: 1.2rem;
-      }
-
-      a {
-        color: #28531a;
-        text-decoration: none;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-
-      .btn {
-        display: inline-block;
-        background: var(--accent);
-        color: #111;
-        font-weight: 600;
-        padding: 0.65rem 1rem;
-        border-radius: 10px;
-        text-decoration: none;
-      }
-
-      .btn:hover {
-        background: #e6b100;
-        text-decoration: none;
-      }
-
-      @media (max-width: 640px) {
-        h1 {
-          font-size: 1.6rem;
-        }
-
-        .card {
-          padding: 1.1rem;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <main class="container">
-      <div class="card">
-        <h1>Privacy Policy</h1>
-        <p class="meta">Effective date: April 14, 2026</p>
-        <p>
-          Koyantaw ("we", "our", "us") is a personal safety app that helps
-          users share live trip updates, send panic alerts, and keep trusted
-          contacts informed. This Privacy Policy explains what information we
-          collect, how we use it, and what choices you have.
-        </p>
-
-        <div class="top-links">
-          <a class="btn" href="/">Back to Home</a>
+      <div class="glance" aria-label="Privacy at a glance">
+        <div>
+          <span class="ic"><svg class="i"><use href="#i-users"/></svg></span>
+          <b>You choose who sees</b>
+          <span>Your safety status goes only to contacts you select.</span>
         </div>
+        <div>
+          <span class="ic"><svg class="i"><use href="#i-clock"/></svg></span>
+          <b>Short history</b>
+          <span>Trip history is deleted 24 hours after a trip ends. Guard Mode keeps only the last hour.</span>
+        </div>
+        <div>
+          <span class="ic"><svg class="i"><use href="#i-lock"/></svg></span>
+          <b>Kept on your device</b>
+          <span>Your panic code and security keys stay in secure device storage.</span>
+        </div>
+        <div>
+          <span class="ic"><svg class="i"><use href="#i-ban"/></svg></span>
+          <b>Never sold</b>
+          <span>No behavioral advertising, and we don't sell your personal data.</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <h2>1. Information We Collect</h2>
+  <!-- ===== Policy ===== -->
+  <div class="wrap legal-layout">
+    <nav class="toc" aria-label="On this page">
+      <h5>On this page</h5>
+      <a href="#collect"><span>1</span>Information we collect</a>
+      <a href="#use"><span>2</span>How we use it</a>
+      <a href="#share"><span>3</span>When we share it</a>
+      <a href="#retention"><span>4</span>Data retention</a>
+      <a href="#permissions"><span>5</span>Permissions</a>
+      <a href="#choices"><span>6</span>Your choices</a>
+      <a href="#security"><span>7</span>Security</a>
+      <a href="#ads"><span>8</span>Analytics &amp; ads</a>
+      <a href="#children"><span>9</span>Children</a>
+      <a href="#changes"><span>10</span>Changes</a>
+      <a href="#contact"><span>11</span>Contact</a>
+    </nav>
+
+    <article class="policy">
+      <section id="collect">
+        <h2><span class="n">1</span>Information We Collect</h2>
         <ul>
-          <li>
-            <strong>Account information:</strong> email address, phone number,
-            user ID, and account creation date.
-          </li>
-          <li>
-            <strong>Trusted contact information:</strong> names and phone
-            numbers for contacts you add to your safety network.
-          </li>
-          <li>
-            <strong>Location and trip data:</strong> current location,
-            destination, route progress, check-in status, panic session location,
-            and related timestamps while safety sharing features are active.
-          </li>
-          <li>
-            <strong>Notification data:</strong> Firebase Cloud Messaging (FCM)
-            device tokens and notification topic subscriptions used to deliver
-            safety alerts.
-          </li>
-          <li>
-            <strong>Device-stored security data:</strong> panic code and
-            security keys are stored locally using secure device storage.
-          </li>
+          <li><strong>Account information:</strong> your name, email address and user ID from the account you sign in with (such as Google or Apple), the phone number you add so your contacts can find you, and your account creation date.</li>
+          <li><strong>Trusted contact information:</strong> names and phone numbers for contacts you add to your safety network.</li>
+          <li><strong>Location and trip data:</strong> current location, speed and heading, destination, route progress, check-in status, panic session location, and related timestamps. We collect this only while Guard Mode, a WatchMeOver trip or Panic Mode is active.</li>
+          <li><strong>Saved places:</strong> destinations you choose to save in the app.</li>
+          <li><strong>Notification data:</strong> push notification tokens for your device and the alerts we have sent you.</li>
+          <li><strong>Feedback you send us:</strong> feature requests and votes, and the optional reason you give when deleting your account.</li>
+          <li><strong>Device-stored security data:</strong> panic code and security keys are stored locally using secure device storage and are not sent to us.</li>
         </ul>
+      </section>
 
-        <h2>2. How We Use Information</h2>
+      <section id="use">
+        <h2><span class="n">2</span>How We Use Information</h2>
         <ul>
-          <li>Provide core app safety features (WatchMeOver and Panic Mode).</li>
+          <li>Provide core app safety features: Guard Mode, WatchMeOver and Panic Mode.</li>
+          <li>Detect possible danger during an active session, such as a sudden stop that may be a crash, a lost connection, or a detour from your route, and alert your contacts.</li>
           <li>Share your safety status with contacts you explicitly select.</li>
           <li>Send emergency and session notifications.</li>
           <li>Maintain session state, account access, and reliability.</li>
           <li>Improve safety workflows and service quality.</li>
         </ul>
+      </section>
 
-        <h2>3. When We Share Information</h2>
+      <section id="share">
+        <h2><span class="n">3</span>When We Share Information</h2>
         <ul>
-          <li>
-            <strong>With your chosen contacts:</strong> when you start sharing,
-            trigger panic mode, or send check-ins.
-          </li>
-          <li>
-            <strong>With service providers:</strong> Firebase (Authentication,
-            Firestore, Cloud Messaging) and Google Maps Platform services used by
-            the app (such as Places and Geocoding).
-          </li>
-          <li>
-            <strong>For legal reasons:</strong> if required by law or valid
-            legal process.
-          </li>
+          <li><strong>With your chosen contacts:</strong> when you start a WatchMeOver trip, turn Guard Mode on or off, trigger Panic Mode, send a check-in, or when an automatic safety alert fires. In Guard Mode, contacts are told that you are protected or may need help, but your location is not shown to them.</li>
+          <li><strong>With service providers:</strong> Microsoft Azure (hosting for our servers), Firebase Authentication (sign-in), Firebase Cloud Messaging (push notifications), and Google Maps Platform (maps, place search and geocoding). They process data only to provide these services to us.</li>
+          <li><strong>For legal reasons:</strong> if required by law or valid legal process.</li>
         </ul>
+      </section>
 
-        <h2>4. Data Retention</h2>
+      <section id="retention">
+        <h2><span class="n">4</span>Data Retention</h2>
         <ul>
-          <li>
-            Active location-sharing session history is retained for a limited
-            period after a session ends (default setting is 24 hours, depending
-            on app configuration).
-          </li>
-          <li>
-            Account and contact records are kept while your account is active,
-            unless you remove them.
-          </li>
-          <li>
-            Panic code and certain security data are stored on your device and
-            managed locally.
-          </li>
+          <li><strong>WatchMeOver trips:</strong> location history is deleted 24 hours after the trip ends.</li>
+          <li><strong>Guard Mode:</strong> we keep only the most recent hour of location while protection is on, and older points are deleted continuously.</li>
+          <li><strong>Notifications:</strong> your in-app alert history is kept for 90 days.</li>
+          <li><strong>Account, contacts and saved places:</strong> kept while your account is active, unless you remove them.</li>
+          <li>Panic code and certain security data are stored on your device and managed locally.</li>
         </ul>
+      </section>
 
-        <h2>5. Permissions and Controls</h2>
+      <section id="permissions">
+        <h2><span class="n">5</span>Permissions and Controls</h2>
         <ul>
-          <li>
-            <strong>Location permission:</strong> used for live safety tracking,
-            including background updates during active sessions.
-          </li>
-          <li>
-            <strong>Contacts permission:</strong> used only to let you choose
-            trusted contacts.
-          </li>
-          <li>
-            <strong>Notification permission:</strong> used for safety alerts and
-            important session updates.
-          </li>
+          <li><strong>Location permission:</strong> used for live safety tracking, including background updates while Guard Mode or a trip is active.</li>
+          <li><strong>Contacts permission:</strong> used only to let you choose trusted contacts.</li>
+          <li><strong>Notification permission:</strong> used for safety alerts and important session updates.</li>
         </ul>
+      </section>
 
-        <h2>6. Security</h2>
-        <p>
-          We use reasonable technical and organizational safeguards to protect
-          personal data. Data is transmitted over encrypted network channels. No
-          security method is 100% guaranteed, but we continuously work to improve
-          protection.
-        </p>
+      <section id="choices">
+        <h2><span class="n">6</span>Your Choices</h2>
+        <ul>
+          <li><strong>Stop sharing at any time:</strong> turn off Guard Mode or end a trip, and location collection stops.</li>
+          <li><strong>Manage your contacts:</strong> add or remove trusted contacts and saved places in the app.</li>
+          <li><strong>Delete your account:</strong> you can delete your account in the app's settings. This permanently removes your account and the data linked to it from our servers.</li>
+          <li><strong>Ask us:</strong> to request a copy of your data or ask a privacy question, email <a href="mailto:contact@koyantaw.app">contact@koyantaw.app</a>.</li>
+        </ul>
+      </section>
 
-        <h2>7. Analytics and Advertising</h2>
-        <p>
-          As of this policy date, Koyantaw does not use advertising SDKs for
-          behavioral advertising and does not sell your personal data.
-        </p>
+      <section id="security">
+        <h2><span class="n">7</span>Security</h2>
+        <p>We use reasonable technical and organizational safeguards to protect personal data. Data is transmitted over encrypted network channels. No security method is 100% guaranteed, but we continuously work to improve protection.</p>
+      </section>
 
-        <h2>8. Children's Privacy</h2>
-        <p>
-          Koyantaw is not intended for children under 13. If we learn that we
-          have collected personal data from a child under 13 without appropriate
-          consent, we will take steps to delete that information.
-        </p>
+      <section id="ads">
+        <h2><span class="n">8</span>Analytics and Advertising</h2>
+        <p>As of this policy date, Koyantaw does not use advertising SDKs for behavioral advertising and does not sell your personal data.</p>
+      </section>
 
-        <h2>9. Changes to This Policy</h2>
-        <p>
-          We may update this Privacy Policy from time to time. We will post the
-          updated version on this page with a revised effective date.
-        </p>
+      <section id="children">
+        <h2><span class="n">9</span>Children's Privacy</h2>
+        <p>Koyantaw is not intended for children under 13. If we learn that we have collected personal data from a child under 13 without appropriate consent, we will take steps to delete that information.</p>
+      </section>
 
-        <h2>10. Contact</h2>
-        <p>
-          If you have questions about this Privacy Policy, please contact the
-          Koyantaw team through the official support channel listed for the app.
-        </p>
+      <section id="changes">
+        <h2><span class="n">10</span>Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. We will post the updated version on this page with a revised effective date.</p>
+      </section>
 
-        <div class="bottom-links">
-          <a href="/">Back to Home</a>
-        </div>
+      <section id="contact" class="note">
+        <h2><span class="n">11</span>Contact</h2>
+        <p>If you have questions about this Privacy Policy or your data, email us at <a href="mailto:contact@koyantaw.app"><strong>contact@koyantaw.app</strong></a>.</p>
+      </section>
+
+      <a class="btn btn-dark back-home" href="/">Back to home</a>
+    </article>
+  </div>
+</main>
+
+<!-- ===== Footer ===== -->
+<footer style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="/">
+          <img src="/images/brand/logo.svg" alt="" width="40" height="40" />
+          Koyantaw
+        </a>
+        <p>Your virtual bodyguard for everyday commutes. Let's be there for our loved ones when they really need us.</p>
       </div>
-    </main>
-  </body>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#how">How it works</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/#download">Download</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="/privacy-policy/">Privacy policy</a></li>
+          <li><a href="mailto:contact@koyantaw.app">contact@koyantaw.app</a></li>
+          <li><a href="https://www.bimgoc.com/" target="_blank" rel="noopener">Supported by BIM Goc</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="year">2026</span> Koyantaw. All rights reserved.</span>
+      <span>Made with care in Myanmar · ကိုယ်ရံတော်</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const nav = document.getElementById("nav");
+  const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 8);
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  // Highlight the table-of-contents entry for the section being read.
+  const links = new Map([...document.querySelectorAll(".toc a")].map((a) => [a.hash.slice(1), a]));
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        links.forEach((a) => a.classList.remove("active"));
+        const a = links.get(e.target.id);
+        a.classList.add("active");
+        // On narrow screens the TOC is a horizontal chip row; keep the active chip in view
+        // without scrolling the page itself.
+        const toc = a.parentElement;
+        if (toc.scrollWidth > toc.clientWidth) toc.scrollLeft = a.offsetLeft - (toc.clientWidth - a.offsetWidth) / 2;
+      });
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    document.querySelectorAll(".policy section").forEach((s) => io.observe(s));
+  }
+</script>
+</body>
 </html>

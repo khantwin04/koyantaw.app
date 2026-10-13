@@ -1,577 +1,508 @@
-<!-- File: koyantaw.html -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Koyantaw-ကိုယ်ရံတော်</title>
-    <style>
-      body {
-        margin: 0;
-        font-family: "Segoe UI", sans-serif;
-        background: #f9f9f9;
-        color: #222;
-        line-height: 1.6;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Koyantaw ကိုယ်ရံတော် — Your bodyguard in your pocket</title>
+  <meta name="description" content="Koyantaw is a personal safety app for Myanmar: one-touch Guard Mode, live trip sharing with WatchMeOver, and a Panic Mode that alerts your trusted contacts instantly." />
+  <meta name="theme-color" content="#FFC700" />
+  <link rel="icon" type="image/svg+xml" href="images/brand/logo.svg" />
+  <link rel="icon" type="image/png" sizes="64x64" href="images/brand/favicon-64.png" />
+  <link rel="apple-touch-icon" href="images/brand/apple-touch-icon.png" />
+  <link rel="preload" href="fonts/Satoshi-Bold.otf" as="font" type="font/otf" crossorigin />
+  <link rel="preload" href="fonts/Satoshi-Black.otf" as="font" type="font/otf" crossorigin />
 
-      header {
-        padding: 2rem;
-        text-align: center;
-        background: #fff;
-        border-bottom: 1px solid #eee;
-      }
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Koyantaw — Your bodyguard in your pocket" />
+  <meta property="og:description" content="One-touch protection, live trip sharing and instant panic alerts to the people who care about you." />
+  <meta property="og:image" content="https://koyantaw.app/images/brand/logo-512.png" />
+  <meta property="og:url" content="https://koyantaw.app/" />
+  <link rel="canonical" href="https://koyantaw.app/" />
+  <meta name="twitter:card" content="summary" />
 
-      header h1 {
-        font-size: 2rem;
-        margin: 0.5rem 0;
-      }
+  <link rel="stylesheet" href="styles.css?v=2" />
+</head>
+<body>
 
-      header p {
-        font-size: 1.1rem;
-        color: #555;
-      }
+<!-- Icon sprite (Lucide-style strokes) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+  <symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-siren" viewBox="0 0 24 24"><path d="M7 18v-6a5 5 0 1 1 10 0v6"/><path d="M5 21a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2z"/><path d="M21 12h1M2 12h1M12 2v1M18.5 4.5 18 5M4.9 4.9l.7.7M12 12v6"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></symbol>
+  <symbol id="i-wifi-off" viewBox="0 0 24 24"><path d="M12 20h.01M8.5 16.4a5 5 0 0 1 7 0M5 12.9a10 10 0 0 1 5.2-2.7M19 12.9a10 10 0 0 0-2-1.5M2 8.8a15 15 0 0 1 4.2-2.6M22 8.8a15 15 0 0 0-11.3-3.8M2 2l20 20"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M10.7 5.1A10.7 10.7 0 0 1 22 12a10.8 10.8 0 0 1-1.4 2.2M14.1 14.2a3 3 0 0 1-4.2-4.2M17.5 17.5A10.7 10.7 0 0 1 2 12a10.8 10.8 0 0 1 4.4-5.5M2 2l20 20"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
+  <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-apple" viewBox="0 0 24 24"><path stroke="none" fill="currentColor" d="M16.37 1.43c0 1.14-.5 2.27-1.18 3.08-.74.9-1.99 1.57-2.99 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.57-2.27 1.2-2.98.8-.94 2.15-1.64 3.25-1.68.03.13.06.28.06.43zm4.56 15.71c-.03.07-.46 1.58-1.52 3.12-.94 1.34-1.94 2.71-3.43 2.71-1.52 0-1.9-.88-3.63-.88-1.7 0-2.3.91-3.67.91-1.38 0-2.33-1.26-3.43-2.8C3.96 18.38 2.93 15.57 2.93 12.92c0-4.28 2.8-6.55 5.55-6.55 1.45 0 2.67.95 3.6.95.86 0 2.22-1.01 3.9-1.01.61 0 2.89.06 4.37 2.19-.13.09-2.38 1.37-2.38 4.19 0 3.26 2.85 4.42 2.96 4.45z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><g stroke="none"><path fill="#00D7FE" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path fill="#FFCE00" d="m17.2 8.6 3.3 1.9c1 .6 1 2.4 0 3l-3.3 1.9L13.8 12z"/><path fill="#00F076" d="M3.6 1.8c.3-.2.8-.2 1.2 0l12.4 6.8-3.4 3.4z"/><path fill="#F83C4B" d="M13.8 12l3.4 3.4-12.4 6.8c-.4.2-.9.2-1.2 0z"/></g></symbol>
 
-      .hero {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 3rem 1rem;
-      }
+  <!-- Reusable map: muted city grid, a park, a river, a few avenues -->
+  <symbol id="map" viewBox="0 0 260 320" preserveAspectRatio="xMidYMid slice">
+    <rect width="260" height="320" fill="#eceee9"/>
+    <path d="M-10 250 C 60 220, 110 300, 270 240 L 270 290 C 120 340, 70 260, -10 300 Z" fill="#c9e0f5"/>
+    <rect x="150" y="40" width="80" height="60" rx="8" fill="#d3ebc9"/>
+    <rect x="20" y="150" width="54" height="44" rx="8" fill="#d3ebc9"/>
+    <g stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round">
+      <path d="M0 30 H260 M0 120 H260 M0 205 H260 M40 0 V320 M130 0 V320 M210 0 V320"/>
+    </g>
+    <g stroke="#ffffff" stroke-width="3" fill="none">
+      <path d="M0 75 H260 M0 165 H260 M85 0 V320 M170 0 V240 M250 0 V320"/>
+    </g>
+    <path d="M-10 330 L 270 -10" stroke="#ffe08a" stroke-width="9" fill="none"/>
+    <path d="M-10 330 L 270 -10" stroke="#ffd04a" stroke-width="1.5" fill="none"/>
+  </symbol>
+</svg>
 
-      .hero h2 {
-        font-size: 2.2rem;
-        margin-bottom: 0.5rem;
-      }
+<!-- ===== Nav ===== -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Koyantaw home">
+      <img src="images/brand/logo.svg" alt="" width="40" height="40" />
+      Koyantaw
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-dark" href="#download">Get the app</a>
+  </div>
+</header>
 
-      .hero p {
-        font-size: 1.1rem;
-        color: #666;
-        max-width: 500px;
-      }
+<main id="top">
 
-      .cta-button {
-        background-color: #f4c430;
-        color: #000;
-        padding: 0.8rem 1.5rem;
-        font-weight: bold;
-        border: none;
-        border-radius: 10px;
-        margin-top: 1.5rem;
-        cursor: pointer;
-        transition: background 0.3s ease;
-      }
-
-      .cta-button:hover {
-        background-color: #e6b100;
-      }
-
-      .section {
-        padding: 3rem 1rem;
-        text-align: center;
-      }
-
-      .features {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 1.5rem;
-        margin-top: 2rem;
-      }
-
-      .feature-box {
-        background: white;
-        padding: 2rem;
-        border-radius: 16px;
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
-      }
-
-      .feature-box h3 {
-        margin: 1rem 0 0.5rem;
-        font-size: 1.2rem;
-      }
-
-      .feature-box p {
-        font-size: 0.95rem;
-        color: #555;
-      }
-
-      .journey-section {
-        background: #fff;
-        padding: 4rem 1rem;
-        text-align: center;
-      }
-
-      .journey-steps {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 2rem 0;
-      }
-
-      .journey-step {
-        display: flex;
-        align-items: center;
-        margin-bottom: 3rem;
-        text-align: left;
-        background: #f8f8f8;
-        padding: 2rem;
-        border-radius: 16px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      }
-
-      .step-number {
-        width: 50px;
-        height: 50px;
-        background: #f4c430;
-        color: #000;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        font-size: 1.2rem;
-        margin-right: 1.5rem;
-        flex-shrink: 0;
-      }
-
-      .step-content {
-        flex-grow: 1;
-      }
-
-      .step-content h3 {
-        margin: 0 0 0.5rem 0;
-        color: #222;
-      }
-
-      .step-content p {
-        margin: 0;
-        color: #555;
-        line-height: 1.6;
-      }
-
-      .mockup-images {
-        display: flex;
-        flex-direction: column;
-        gap: 6rem;
-        margin: 4rem auto;
-        padding: 0 2rem;
-        max-width: 1200px;
-      }
-
-      .mockup-card {
-        display: flex;
-        align-items: center;
-        gap: 4rem;
-        padding: 2rem;
-        position: relative;
-        overflow: visible;
-      }
-
-      .mockup-card::before {
-        content: "";
-        position: absolute;
-        width: 200px;
-        height: 200px;
-        background-image: url("images/koyantaw.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        z-index: 0;
-        right: 0%;
-        top: 50%;
-        transform: translateY(-50%);
-        opacity: 0.6;
-      }
-
-      .mockup-card.reverse::before {
-        right: auto;
-        left: 0%;
-      }
-
-      .mockup-content {
-        flex: 1;
-        max-width: 400px;
-        z-index: 2;
-      }
-
-      .mockup-card img {
-        width: 280px;
-        border-radius: 24px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-        transition: transform 0.3s ease;
-        position: relative;
-        z-index: 2;
-      }
-
-      .mockup-card.reverse {
-        flex-direction: row-reverse;
-      }
-
-      .mockup-card:hover {
-        transform: none;
-      }
-
-      .mockup-card.reverse:hover {
-        transform: none;
-      }
-
-      .mockup-content h3 {
-        margin: 0 0 1rem 0;
-        color: #222;
-        font-size: 2rem;
-        font-weight: 700;
-        line-height: 1.2;
-      }
-
-      .mockup-content p {
-        margin: 0;
-        color: #666;
-        font-size: 1.1rem;
-        line-height: 1.6;
-      }
-
-      .mockup-card:hover img {
-        transform: translateY(-5px);
-      }
-
-      .mockup-card.reverse:hover img {
-        transform: translateY(-5px);
-      }
-
-      .impact {
-        background: #fff;
-        border-top: 1px solid #eee;
-        border-bottom: 1px solid #eee;
-      }
-
-      .contributors {
-        background: #fff;
-        padding-top: 4rem;
-      }
-
-      .contributors-grid-modern {
-        display: grid;
-        gap: 2rem;
-        justify-content: center;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        margin-top: 2rem;
-        padding: 0 1rem;
-      }
-
-      .contributor-card {
-        background: white;
-        border-radius: 16px;
-        text-align: center;
-        padding: 1.5rem;
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-      }
-
-      .contributor-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-      }
-
-      .contributor-card img {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-bottom: 1rem;
-      }
-
-      .contributor-card h4 {
-        font-size: 1rem;
-        margin: 0.2rem 0;
-      }
-
-      .contributor-card p {
-        font-size: 0.85rem;
-        color: #666;
-      }
-
-      footer {
-        padding: 2rem;
-        text-align: center;
-        background: #f0f0f0;
-        font-size: 0.95rem;
-        color: #444;
-      }
-
-      footer p {
-        margin: 0 0 1rem 0;
-      }
-
-      .supporters {
-        margin-top: 1rem;
-        padding-top: 1rem;
-        border-top: 1px solid #ddd;
-        font-size: 0.9rem;
-      }
-
-      .supporters a {
-        color: #28531a;
-        text-decoration: none;
-        transition: color 0.3s ease;
-        margin: 0 0.5rem;
-      }
-
-      .supporters a:hover {
-        color: #e6b100;
-        text-decoration: underline;
-      }
-
-      .footer-links {
-        margin-top: 1rem;
-        font-size: 0.9rem;
-      }
-
-      .footer-links a {
-        color: #28531a;
-        text-decoration: none;
-      }
-
-      .footer-links a:hover {
-        text-decoration: underline;
-      }
-
-      @media (max-width: 600px) {
-        .hero h2 {
-          font-size: 1.6rem;
-        }
-
-        .mockup-images img {
-          width: 160px;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .mockup-images {
-          gap: 4rem;
-          margin: 2rem auto;
-        }
-
-        .mockup-card {
-          flex-direction: column-reverse;
-          text-align: center;
-          gap: 2rem;
-          padding: 1rem;
-        }
-
-        .mockup-card.reverse {
-          flex-direction: column-reverse;
-        }
-
-        .mockup-card img {
-          width: 240px;
-        }
-
-        .mockup-card:hover img {
-          transform: translateY(-3px);
-        }
-
-        .mockup-card.reverse:hover img {
-          transform: translateY(-3px);
-        }
-
-        .mockup-content {
-          max-width: 100%;
-        }
-
-        .mockup-content h3 {
-          font-size: 1.5rem;
-        }
-
-        .mockup-card::before {
-          width: 250px;
-          height: 250px;
-          right: 50%;
-          transform: translate(50%, -50%);
-          opacity: 0.4;
-        }
-
-        .mockup-card.reverse::before {
-          left: 50%;
-          transform: translate(-50%, -50%);
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Koyantaw - ကိုယ်ရံတော်</h1>
-      <p>Your virtual bodyguard for daily commuting safety</p>
-    </header>
-
-    <section class="hero">
-      <h2>Stay Safe, Wherever You Go</h2>
-      <p>
-        Auto-alerts, panic mode, and real-time sharing designed to protect you
-        during your daily journey.
-      </p>
-      <button class="cta-button">Get the App</button>
-    </section>
-
-    <section class="section">
-      <h2>App Screens</h2>
-      <div class="mockup-images">
-        <div class="mockup-card">
-          <div class="mockup-content">
-            <h3>Home Screen</h3>
-            <p>Quick access to all features with one tap.</p>
-          </div>
-          <img src="images/home.png" alt="Koyantaw Home Screen" />
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="mm">ကိုယ်ရံတော် · your personal bodyguard</span>
+        <h1>Get home safe.<br /><mark>Every&nbsp;time.</mark></h1>
+        <p class="lede">
+          Koyantaw watches over you on every commute. Turn on protection with one tap, share your trip
+          live with family, and call for help in a second if something goes wrong.
+        </p>
+        <div class="stores">
+          <a class="store" data-store="ios" href="#download">
+            <svg class="i"><use href="#i-apple"/></svg>
+            <span><small>Download on the</small><b>App Store</b></span>
+          </a>
+          <a class="store" data-store="android" href="#download">
+            <svg class="i"><use href="#i-play"/></svg>
+            <span><small>Get it on</small><b>Google Play</b></span>
+          </a>
         </div>
-        <div class="mockup-card reverse">
-          <div class="mockup-content">
-            <h3>Journey Check-in</h3>
-            <p>
-              Start your journey with confidence. Set your destination and
-              activate safety monitoring with our intuitive check-in system.
-            </p>
-          </div>
-          <img src="images/check_in.png" alt="Koyantaw Check-in Screen" />
-        </div>
-        <div class="mockup-card">
-          <div class="mockup-content">
-            <h3>Real-time Sharing</h3>
-            <p>
-              Keep your loved ones informed. Share your live location and
-              journey status with your trusted safety network.
-            </p>
-          </div>
-          <img src="images/sharing.png" alt="Koyantaw Sharing Screen" />
+        <div class="hero-meta">
+          <span><svg class="i"><use href="#i-check"/></svg>Free to use</span>
+          <span><svg class="i"><use href="#i-check"/></svg>Works in the background</span>
+          <span><svg class="i"><use href="#i-check"/></svg>Made in Myanmar</span>
         </div>
       </div>
-    </section>
 
-    <section class="journey-section">
-      <h2>How Koyantaw Works</h2>
-      <div class="journey-steps">
-        <div class="journey-step">
-          <div class="step-number">1</div>
-          <div class="step-content">
-            <h3>Setup Your Safety Network</h3>
-            <p>
-              Add trusted contacts who will receive alerts when you need help.
-              These can be family members, friends, or emergency contacts.
-            </p>
+      <div class="hero-visual">
+        <div class="toast t1">
+          <div class="ic" style="background:var(--green-soft);color:var(--protected)"><svg class="i"><use href="#i-shield-check"/></svg></div>
+          <div><b>Protection on</b>Your contacts have been told</div>
+        </div>
+
+        <!-- Phone: home screen with Guard Mode armed -->
+        <div class="phone" role="img" aria-label="Koyantaw home screen with protection turned on">
+          <div class="screen">
+            <div class="sb"><span>9:41</span><i></i></div>
+            <div class="appbar">
+              <svg class="i"><use href="#i-menu"/></svg>
+              <b>Koyantaw</b>
+              <span class="dot-badge"><svg class="i"><use href="#i-bell"/></svg></span>
+            </div>
+            <div class="guard-bar"><svg class="i"><use href="#i-shield-check"/></svg>Protection is on. Tap to turn off</div>
+            <div class="scr-body">
+              <div class="map">
+                <svg><use href="#map"/></svg>
+                <span class="pin-me" style="left:48%;top:46%"></span>
+              </div>
+              <div class="card-row red">
+                <span class="sq"><svg class="i"><use href="#i-siren"/></svg></span>
+                <div><b>Panic Mode</b><small>Alert everyone, right now</small></div>
+                <svg class="i chev"><use href="#i-chev"/></svg>
+              </div>
+              <div class="card-row yel">
+                <span class="sq"><svg class="i"><use href="#i-pin"/></svg></span>
+                <div><b>WatchMeOver</b><small>Share your trip with contacts</small></div>
+                <svg class="i chev"><use href="#i-chev"/></svg>
+              </div>
+            </div>
+            <div class="tabbar">
+              <span class="on"><svg class="i"><use href="#i-home"/></svg>Home</span>
+              <span><svg class="i"><use href="#i-users"/></svg>Contacts</span>
+              <span class="fab"><svg class="i"><use href="#i-shield-check"/></svg></span>
+              <span><svg class="i"><use href="#i-bookmark"/></svg>Saved</span>
+              <span><svg class="i"><use href="#i-pin"/></svg>Places</span>
+            </div>
           </div>
         </div>
 
-        <div class="journey-step">
-          <div class="step-number">2</div>
-          <div class="step-content">
-            <h3>Start Your Journey</h3>
-            <p>
-              When you begin your commute, activate the app. Koyantaw will
-              automatically monitor your movement and surroundings.
-            </p>
-          </div>
-        </div>
-
-        <div class="journey-step">
-          <div class="step-number">3</div>
-          <div class="step-content">
-            <h3>Smart Monitoring</h3>
-            <p>
-              The app continuously analyzes your speed, movement patterns. If
-              anything unusual is detected, it will trigger an alert.
-            </p>
-          </div>
-        </div>
-
-        <div class="journey-step">
-          <div class="step-number">4</div>
-          <div class="step-content">
-            <h3>Panic Mode</h3>
-            <p>
-              If you feel unsafe, simply tap the panic button. This immediately
-              sends your location and activates emergency protocols to your
-              safety network.
-            </p>
-          </div>
-        </div>
-
-        <div class="journey-step">
-          <div class="step-number">5</div>
-          <div class="step-content">
-            <h3>WatchMeOver</h3>
-            <p>
-              Share your live location with trusted contacts who can monitor
-              your journey in real-time and respond quickly if needed.
-            </p>
-          </div>
-        </div>
-
-        <div class="journey-step">
-          <div class="step-number">6</div>
-          <div class="step-content">
-            <h3>Safe Arrival</h3>
-            <p>
-              Once you reach your destination, the app automatically notifies
-              your safety network that you've arrived safely.
-            </p>
-          </div>
+        <div class="toast t2">
+          <div class="ic" style="background:var(--yellow-soft);color:#7a5f00"><svg class="i"><use href="#i-flag"/></svg></div>
+          <div><b>Thida arrived safely</b>Hledan → Home · 2 min ago</div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section impact">
-      <h2>Why It Matters</h2>
-      <p>
-        With rising crime rates in Myanmar, automated safety tools can save
-        lives. Let's make protection proactive.
-      </p>
-    </section>
+  <!-- ===== Trust strip ===== -->
+  <section class="strip" aria-label="At a glance">
+    <div class="wrap">
+      <div><b>1 tap</b><span>to turn protection on</span></div>
+      <div><b>Live</b><span>trip sharing with family</span></div>
+      <div><b>Instant</b><span>SOS to every contact</span></div>
+      <div><b>Auto</b><span>crash &amp; signal-loss alerts</span></div>
+    </div>
+  </section>
 
-    <section class="section contributors">
-      <h2>Contributors</h2>
-      <div class="contributors-grid-modern">
- <div class="contributor-card">
-          <img
-            src="https://media.licdn.com/dms/image/v2/D5603AQGnoniThGj8mA/profile-displayphoto-shrink_400_400/B56ZRgficbHoAg-/0/1736785668290?e=1750291200&v=beta&t=G92_UVylbEBfv_caHFXHYHinmbg-rrGCgjf8cNIqHkE"
-            alt="Bo Bo Linnaing"
-          />
-          <a href="https://www.linkedin.com/in/bobo-linnaing-77538b184">  <h4>Bobo Linnaing</h4></a>
-          <p>UI/UX Designer | MBBS</p>
+  <!-- ===== Features ===== -->
+  <section class="section" id="features">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Three ways to stay safe</span>
+        <h2>Protection that fits the moment</h2>
+        <p>Quietly on all day, shared for one trip, or loud when you need help. You choose how much Koyantaw does.</p>
+      </div>
+
+      <!-- Guard Mode -->
+      <article class="feature reveal">
+        <div class="feature-copy">
+          <span class="tag green"><svg class="i"><use href="#i-shield-check"/></svg>Guard Mode</span>
+          <h3>One tap. Protected until you say stop.</h3>
+          <p>Tap the shield and Koyantaw starts watching in the background. Your contacts hear that you're protected, and they're alerted only if something looks wrong.</p>
+          <ul class="checks">
+            <li><svg class="i"><use href="#i-check"/></svg><span><b>Private by default.</b> Your contacts never see where you are, even during an alert.</span></li>
+            <li><svg class="i"><use href="#i-check"/></svg><span><b>Crash detection.</b> A sudden stop at speed alerts your saved contacts automatically.</span></li>
+            <li><svg class="i"><use href="#i-check"/></svg><span><b>Stays on.</b> Protection runs until you turn it off, not when you close the app.</span></li>
+          </ul>
         </div>
-
-          <div class="contributor-card">
-            <img
-            src="https://media.licdn.com/dms/image/v2/D5603AQGYubjYSWtuKQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1722680905076?e=1750291200&v=beta&t=vDTQ_OMdRMdmRpMpu1gOjShCpgG3OmbNOB_zVuefwW8"
-            alt="Pwint Yee Mon (Christine)"
-          />
-          <a href="https://www.linkedin.com/in/christine-mon"> <h4>Pwint Yee Mon (Christine)</h4></a>
-          <p>
-            Product Designer specialising in complex, large-scale systems and
-            applications | Visual and Interaction Design Specialist | Design
-            System Enthusiast
-          </p>
+        <div class="feature-visual bg-green">
+          <img src="images/commute.png" alt="Illustration of people commuting safely" width="360" height="360" loading="lazy" style="width:min(300px,80%);mix-blend-mode:multiply" />
         </div>
-        
-        
-        <div class="contributor-card">
-          <img
-            src="https://media.licdn.com/dms/image/v2/D5603AQGxT5syXMJJCQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1704724524527?e=1750291200&v=beta&t=AHBsUxlkoAuwrz-pgh0KWJ-KyFdE7h7OHVFzMyANP7w"
-            alt="Khant Win"
-          />
-          <a href="https://www.linkedin.com/in/khantwin/"> <h4>Khant Win</h4></a>
-          <p>
-            Application Consultant | Flutter Developer | Hustler
-            entrepreneurship
-          </p>
+      </article>
+
+      <!-- WatchMeOver -->
+      <article class="feature flip reveal">
+        <div class="feature-copy">
+          <span class="tag yel"><svg class="i"><use href="#i-pin"/></svg>WatchMeOver</span>
+          <h3>Let them follow your trip, live.</h3>
+          <p>Heading home late? Pick a destination and the people to share with. They watch you move on the map and know the moment you've arrived.</p>
+          <ul class="checks">
+            <li><svg class="i"><use href="#i-check"/></svg><span><b>Live map and ETA</b> for the contacts you choose, just for this trip.</span></li>
+            <li><svg class="i"><use href="#i-check"/></svg><span><b>Checkpoint updates</b> with the road you're on, so they're never guessing.</span></li>
+            <li><svg class="i"><use href="#i-check"/></svg><span><b>Signal-loss alerts</b> if your phone goes quiet mid-trip.</span></li>
+          </ul>
+        </div>
+        <div class="feature-visual bg-yel">
+          <!-- Phone: active trip -->
+          <div class="phone" role="img" aria-label="WatchMeOver trip in progress, shared with three contacts">
+            <div class="screen">
+              <div class="sb"><span>21:14</span><i></i></div>
+              <div class="scr-body" style="padding-top:4px">
+                <div class="map">
+                  <svg><use href="#map"/></svg>
+                  <svg viewBox="0 0 260 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                    <path d="M40 300 V205 H130 V120 H210 V40" fill="none" stroke="#4e2eff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity=".25"/>
+                    <path d="M40 300 V205 H130 V160" fill="none" stroke="#4e2eff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="210" cy="40" r="9" fill="#0c0d0e"/><circle cx="210" cy="40" r="3.5" fill="#ffc700"/>
+                  </svg>
+                  <span class="pin-me" style="left:calc(50% - 9px);top:calc(50% - 9px)"></span>
+                </div>
+                <div class="trip-sheet">
+                  <div class="grab"></div>
+                  <h4>Sharing your trip home</h4>
+                  <div class="eta">
+                    <div><small>Arriving</small><b>21:32</b></div>
+                    <div><small>Distance</small><b>4.2 km</b></div>
+                  </div>
+                  <div class="viewers">
+                    <span class="avatars">
+                      <i style="background:var(--yellow)">M</i><i style="background:var(--blue-soft)">K</i><i style="background:var(--green-soft)">A</i>
+                    </span>
+                    Mum, Ko Ko and Aye are watching
+                  </div>
+                  <div class="mini-btn">Check in</div>
+                </div>
+              </div>
+              <div style="height:14px"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Panic Mode -->
+      <article class="feature reveal">
+        <div class="feature-copy">
+          <span class="tag red"><svg class="i"><use href="#i-siren"/></svg>Panic Mode</span>
+          <h3>Help, in a single press.</h3>
+          <p>If you feel unsafe, Panic Mode sends an SOS with your exact location to every emergency contact at once, and can sound a loud siren to draw attention.</p>
+          <ul class="checks">
+            <li><svg class="i"><use href="#i-check"/></svg><span><b>Instant push alerts</b> to everyone in your safety network.</span></li>
+            <li><svg class="i"><use href="#i-check"/></svg><span><b>Live location</b> so they can find you or send help.</span></li>
+            <li><svg class="i"><use href="#i-check"/></svg><span><b>Private panic code</b> needed to stop the alert, so no one else can cancel it.</span></li>
+          </ul>
+        </div>
+        <div class="feature-visual bg-red">
+          <!-- Phone: panic -->
+          <div class="phone" role="img" aria-label="Panic alert sent to three contacts">
+            <div class="screen panic">
+              <div class="sb"><span>23:02</span><i></i></div>
+              <div class="panic-body">
+                <h4>Panic Alert !</h4>
+                <p>Your location is being shared with your emergency contacts.</p>
+                <div class="sos">SOS</div>
+                <div class="sent-list">
+                  <div>Mum <svg class="i"><use href="#i-check"/></svg></div>
+                  <div>Ko Ko <svg class="i"><use href="#i-check"/></svg></div>
+                  <div>Aye Aye <svg class="i"><use href="#i-check"/></svg></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== Bento: always-on extras ===== -->
+  <section class="section bento-section" aria-labelledby="extras-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Working while you're not looking</span>
+        <h2 id="extras-title">Smart alerts, without lifting a finger</h2>
+        <p>Koyantaw does the worrying in the background, so you can keep your eyes on the road.</p>
+      </div>
+      <div class="bento">
+        <div class="tile wide reveal">
+          <span class="ic"><svg class="i"><use href="#i-car"/></svg></span>
+          <h4>Crash detection</h4>
+          <p>A hard stop from road speed, or a sharp impact, triggers an automatic alert to your contacts. No tap needed.</p>
+        </div>
+        <div class="tile reveal">
+          <span class="ic"><svg class="i"><use href="#i-wifi-off"/></svg></span>
+          <h4>Signal-loss alerts</h4>
+          <p>If your phone stops checking in mid-trip, your contacts are told, and told again when you're back.</p>
+        </div>
+        <div class="tile reveal">
+          <span class="ic"><svg class="i"><use href="#i-flag"/></svg></span>
+          <h4>Checkpoints &amp; detours</h4>
+          <p>Progress updates with real road names, plus a heads-up if you go off route.</p>
+        </div>
+        <div class="tile reveal">
+          <span class="ic"><svg class="i"><use href="#i-phone"/></svg></span>
+          <h4>On your lock screen</h4>
+          <p>A Live Activity on iPhone and a live card on Android keep your status in view.</p>
+        </div>
+        <div class="tile reveal">
+          <span class="ic"><svg class="i"><use href="#i-users"/></svg></span>
+          <h4>Your safety network</h4>
+          <p>Add family and friends once. They're ready the moment you need them.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer>
-      <p>Let's be there for our loved ones when they really need us.</p>
-      <div class="supporters">
-        Supported by <a href="https://www.bimgoc.com/">BIM Goc</a>
+  <!-- ===== How it works ===== -->
+  <section class="section" id="how">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">How it works</span>
+        <h2>Set up in under a minute</h2>
+        <p>Sign in with Google or Apple, add the people you trust, and you're covered.</p>
       </div>
-      <div class="footer-links">
-        <a href="/privacy-policy/">Privacy Policy</a>
+      <div class="steps">
+        <div class="step reveal">
+          <h4>Add your people</h4>
+          <p>Choose the family and friends who should hear from Koyantaw when it matters.</p>
+          <img src="images/contacts.png" alt="" width="338" height="360" loading="lazy" />
+        </div>
+        <div class="step reveal">
+          <h4>Turn on protection</h4>
+          <p>Tap the shield for all-day Guard Mode, or start a WatchMeOver trip to a destination.</p>
+          <img src="images/watchmeover.png" alt="" width="360" height="360" loading="lazy" />
+        </div>
+        <div class="step reveal">
+          <h4>Get help fast</h4>
+          <p>Alerts go out automatically, or press Panic Mode to call everyone at once.</p>
+          <img src="images/panic.png" alt="" width="360" height="360" loading="lazy" />
+        </div>
       </div>
-    </footer>
-  </body>
+    </div>
+  </section>
+
+  <!-- ===== Privacy ===== -->
+  <section class="section" id="privacy" style="background:var(--surface)">
+    <div class="wrap privacy">
+      <div class="privacy-copy reveal">
+        <span class="eyebrow">Privacy first</span>
+        <h2>Your location is yours.</h2>
+        <p>A safety app has to earn your trust. Koyantaw shares only what you choose, with only the people you choose, for only as long as it's needed.</p>
+        <a class="btn btn-dark" href="/privacy-policy/">Read our privacy policy</a>
+      </div>
+      <div class="privacy-list">
+        <div class="reveal">
+          <span class="ic"><svg class="i"><use href="#i-eye-off"/></svg></span>
+          <span><b>Guard Mode stays hidden</b><p>Your contacts are told you're protected, never where you are.</p></span>
+        </div>
+        <div class="reveal">
+          <span class="ic"><svg class="i"><use href="#i-clock"/></svg></span>
+          <span><b>Short retention</b><p>Location history is kept only briefly, then deleted automatically.</p></span>
+        </div>
+        <div class="reveal">
+          <span class="ic"><svg class="i"><use href="#i-lock"/></svg></span>
+          <span><b>Secured on your device</b><p>Your panic code and security keys live in your phone's secure storage.</p></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2>Questions, answered</h2>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>Is Koyantaw free?</summary>
+          <p>Yes. All the safety features, Guard Mode, WatchMeOver and Panic Mode, are free to use.</p>
+        </details>
+        <details>
+          <summary>Do my contacts need the app too?</summary>
+          <p>To see your live trip and receive instant push alerts, your contacts should install Koyantaw and sign in. Adding them to your safety network takes a few seconds.</p>
+        </details>
+        <details>
+          <summary>What's the difference between Guard Mode and WatchMeOver?</summary>
+          <p>Guard Mode is all-day, one-tap protection: your location is never shown to anyone, and contacts are alerted only if something goes wrong. WatchMeOver is for a single trip: the contacts you pick can follow you live on a map until you arrive.</p>
+        </details>
+        <details>
+          <summary>Will it drain my battery?</summary>
+          <p>Koyantaw is built to run in the background on long commutes. It only sends location while protection or a trip is active, and stops the moment you turn it off.</p>
+        </details>
+        <details>
+          <summary>What happens if I lose signal?</summary>
+          <p>If your phone stops checking in during a trip, Koyantaw tells your contacts. When you're back online, they're told that too.</p>
+        </details>
+        <details>
+          <summary>Does it work in Myanmar?</summary>
+          <p>Koyantaw was designed in Myanmar for everyday commutes in Yangon, Mandalay and beyond, and works anywhere you have a mobile connection.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="wrap" id="download" style="padding-bottom:40px">
+    <div class="cta reveal">
+      <div>
+        <h2>Be there for the people you love.</h2>
+        <p>Download Koyantaw and give your family peace of mind on every trip.</p>
+        <div class="stores">
+          <a class="store" data-store="ios" href="#download">
+            <svg class="i"><use href="#i-apple"/></svg>
+            <span><small>Download on the</small><b>App Store</b></span>
+          </a>
+          <a class="store" data-store="android" href="#download">
+            <svg class="i"><use href="#i-play"/></svg>
+            <span><small>Get it on</small><b>Google Play</b></span>
+          </a>
+        </div>
+      </div>
+      <img src="images/commute.png" alt="" width="360" height="360" loading="lazy" />
+    </div>
+  </section>
+</main>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top">
+          <img src="images/brand/logo.svg" alt="" width="40" height="40" />
+          Koyantaw
+        </a>
+        <p>Your virtual bodyguard for everyday commutes. Let's be there for our loved ones when they really need us.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#download">Download</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="/privacy-policy/">Privacy policy</a></li>
+          <li><a href="mailto:contact@koyantaw.app">contact@koyantaw.app</a></li>
+          <li><a href="https://www.bimgoc.com/" target="_blank" rel="noopener">Supported by BIM Goc</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="year">2026</span> Koyantaw. All rights reserved.</span>
+      <span>Made with care in Myanmar · ကိုယ်ရံတော်</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Store links: fill these in once the listings are live. Empty → button reads "Coming soon".
+  const STORE_LINKS = {
+    ios: "",
+    android: "",
+  };
+
+  document.querySelectorAll("[data-store]").forEach((a) => {
+    const url = STORE_LINKS[a.dataset.store];
+    if (url) {
+      a.href = url;
+      a.target = "_blank";
+      a.rel = "noopener";
+    } else {
+      a.querySelector("small").textContent = "Coming soon to";
+      a.removeAttribute("href");
+      a.setAttribute("aria-disabled", "true");
+      a.style.cursor = "default";
+    }
+  });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const nav = document.getElementById("nav");
+  const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 8);
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+  } else {
+    document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in"));
+  }
+</script>
+</body>
 </html>

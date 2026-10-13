@@ -1,15 +1,5 @@
 {
   "projects": {
-    "default": "koyantaw-kw"
-  },
-  "targets": {
-    "koyantaw-kw": {
-      "hosting": {
-        "koyantaw": [
-          "koyantaw"
-        ]
-      }
-    }
-  },
-  "etags": {}
+    "default": "mmkoyantaw"
+  }
 }

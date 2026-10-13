@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="194 158 636 682">
+  <!-- Koyantaw mark, single colour. The pin is cut out of the shield. -->
+  <mask id="m"><path d="M512 176c96 72 196 104 300 108v236c0 186-128 306-300 362-172-56-300-176-300-362V284c104-4 204-36 300-108z" fill="#fff" stroke="#fff" stroke-width="36" stroke-linejoin="round"/>
+    <path d="M512 716s-132-138-132-236a132 132 0 0 1 264 0c0 98-132 236-132 236z" fill="#000" stroke="#000" stroke-width="12" stroke-linejoin="round"/>
+    <circle cx="512" cy="478" r="50" fill="#fff"/></mask>
+  <rect x="150" y="120" width="724" height="800" fill="#0C0D0E" mask="url(#m)"/>
+</svg>
